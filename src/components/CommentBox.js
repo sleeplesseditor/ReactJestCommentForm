@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 
 class CommentBox extends Component {
-    state = {
-        comment: ''
-    };
+    state = { comment: '' };
 
     hangdleChange = (event) => {
         this.setState({ comment: event.target.value });
@@ -18,7 +16,7 @@ class CommentBox extends Component {
 
     render() {
         return (
-            <form onSumbit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <h4>Add a Comment</h4>
                 <textarea onChange={this.handleChange} value={this.state.comment} />
                 <div>
