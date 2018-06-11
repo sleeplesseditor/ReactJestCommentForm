@@ -21,13 +21,13 @@ it('has a text area and a button', () => {
 describe('text area', () => {
     beforeEach(() => {
         wrapped.find('textarea').simulate('change', {
-            target: { value: 'new comment' }
+            target: { value: '' }
         });
         wrapped.update();
     });
 
     it('has a text area that users can type in', () => {
-        expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
+        expect(wrapped.find('textarea').prop('value')).toEqual('');
     });
     
     it('when form is submitted, text area gets emptied', () => {
