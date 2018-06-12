@@ -4,20 +4,21 @@ import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
+import * as actions from 'actions';
 
 import '../style/style.css';
 
 class App extends Component {     
     renderButton() {
         if (this.props.auth) {
-            return(
-                <Button className="btn btn-outline-danger">
+            return (
+                <Button className="btn btn-outline-danger" onClick={() => this.props.changeAuth(false)}>
                     Sign Out
                 </Button>
             );
         } else {
             return (
-                <Button className="btn btn-outline-success">
+                <Button className="btn btn-outline-success" onClick={() => this.props.changeAuth(true)}>
                     Sign In
                 </Button>
             );
@@ -34,12 +35,12 @@ class App extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <Link  to="/" className="nav-link">Home <span className="sr-only">(current)</span></Link>
+                            <Link to="/" className="nav-link">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/post" className="nav-link">Post</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item nav-button">
                             {this.renderButton()}
                         </li>
                     </ul>
@@ -63,4 +64,4 @@ function mapStateToProps(state) {
     return { auth: state.auth }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, actions)(App);
