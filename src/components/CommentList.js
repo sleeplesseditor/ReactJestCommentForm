@@ -10,7 +10,7 @@ class CommentList extends Component {
     
     render() {
         return (
-            <div>
+            <div className="comment-section">
                 <h4>Comment List</h4>
                 <ul>{this.renderComments()}</ul>
             </div>
