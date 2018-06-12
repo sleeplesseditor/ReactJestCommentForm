@@ -22,12 +22,10 @@ class CommentBox extends Component {
             <div>
                 <form>
                     <h4>Add a Comment</h4>
-                    <textarea onChange={this.handleChange} value={this.state.comment} />
-                    <div>
-                        <Button className="btn btn-outline-success" onClick={this.handleSubmit}>Submit Comment</Button>
-                    </div>
+                    <textarea className="form-control comment-form" onChange={this.handleChange} value={this.state.comment} />
                 </form>
-                <Button className="btn btn-outline-danger" onClick={this.props.fetchComments}>Fetch Comments</Button>
+                <Button className="btn btn-outline-success submit-comments" onClick={this.handleSubmit}>Submit Comment</Button>
+                <Button className="btn btn-outline-danger fetch-comments" onClick={this.props.fetchComments}>Fetch Comments</Button>
             </div>
         );
     }
