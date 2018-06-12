@@ -14,3 +14,11 @@ body {
     margin-bottom: 10px;
     width: 36%;
 }
+
+.comment-section {
+    margin-top: 70px;
+}
+
+.auth-button {
+    float: right;
+}

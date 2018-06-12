@@ -19,7 +19,7 @@ class CommentBox extends Component {
 
     render() {
         return (
-            <div>
+            <div className="comment-section">
                 <form>
                     <h4>Add a Comment</h4>
                     <textarea className="form-control comment-form" onChange={this.handleChange} value={this.state.comment} />
